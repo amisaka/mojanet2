@@ -1,0 +1,58 @@
+---
+  layout: base
+  category: blog
+  title: Blog
+---
+
+<div class="page-title-bar">
+  <div class="inner-content">
+    <h2>Blog</h2>
+  </div>
+</div>
+
+<div id="blog">
+  <div id="blog-content">
+    {% for post in site.posts %}
+    {% if post.categories contains 'blog' %}
+    <article>
+      <header>
+        <h1><a href="{% unless site.baseurl == "/" %}{{ site.baseurl }}{% endunless %}{{ post.url }}">{{ post.title }}</a></h1>
+        <p>Posted on {{ post.date | date: "%B %d, %Y" }} by {{ post.author }}</p>
+      </header>
+      <div class="entry-content">
+        {{ post.content | strip_html | truncatewords: 15 }}
+      </div>
+    </article>
+    {% endif %}
+    {% endfor %}
+  
+    {% if paginator.page %}
+    <div id="paginator" class="content">
+      {% if paginator.next_page %}
+      <a href="/page{{ paginator.next_page }}/">Older entries</a>
+      {% endif %}
+      {% if paginator.previous_page %}
+      <a href="/page{{ paginator.previous_page }}/">Newer entries</a>
+      {% endif %}
+    </div>
+    {% endif %}
+
+  </div>
+  <div id="blog-nav">
+    <h4>Welcome to the Mojatatu Networks blog</h4>
+    <p>The latest and greatest on Mojatatu NetOS.<!-- <a href="https://twitter.com/your-handle">Follow us on Twitter</a> or <a href="http://yourdomain.com/atom.xml">subscribe the RSS feed</a> for updates. --> </p>
+
+    <h4>Post archive</h4>
+    <ul class="bordered-list">
+      {% for post in site.posts %}
+      {% if post.categories contains 'blog' %}
+      <li>
+        <a href="{{ post.url }}">{{ post.title }}</a>
+        <span class="date">{{ post.date | date: "%d-%m-%Y" }}</span>
+      </li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+
+  </div>
+</div>

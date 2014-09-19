@@ -1,0 +1,45 @@
+<div id="header">
+  <div class="inner-content"> 
+    <nav id="nav"> 
+      <img src="/images/mojalogo1.png" alt="www.mojatatu.com" style="float:left" width="200" height="45">&nbsp;&nbsp;
+    <div id="centerdmenu">
+    <ul>
+      {% for navbar_link in site.data.navbar_links %}
+         {% if navbar_link.child_links %}
+<!--            {% if navbar_link.name == page.title %}
+               <li class="ative">
+            {% else %}
+               <li>
+            {% endif %}  -->
+           <li>
+            <a href="#">{{ navbar_link.name }} </a>
+             <ul>
+               {% for child_link in navbar_link.child_links %}
+                  {% if child_link.divider %}
+                     <li><a href="{{site.baseurl}}{{child_link.url}}">{{ child_link.name }}</a></li>
+                <!--     <li class="divider"></li> -->
+                  {% else %}
+                     <li><a href="{{site.baseurl}}{{child_link.url}}">{{ child_link.name }}</a></li>
+                  {% endif %}
+               {% endfor %}
+            </ul>
+         </li>
+         {% elsif navbar_link.name == page.title %}
+            <li class="active"><a href="{{site.baseurl}}{{navbar_link.url}}">{{ navbar_link.name }}</a></li>
+           <!--  <li class="divider"></li>  -->
+         {% else %}
+            <li><a href="{{site.baseurl}}{{ navbar_link.url }}">{{ navbar_link.name }}</a></li>
+         {% endif %}
+     {% endfor %} 
+    </ul>
+    </div>
+    </nav> 
+    <!--
+    <div id="social">
+      <span>Follow us on:</span>
+      <a class="github" href="#">Github</a>
+      <a class="twitter" href="#">Twitter</a>
+    </div>
+    -->
+   </div> 
+</div>

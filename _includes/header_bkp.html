@@ -1,0 +1,20 @@
+<div id="header">
+  <div class="inner-content">
+    <nav id="nav">
+      <img src="/images/mojalogo1.png" alt="www.mojatatu.com" style="float:left" width="200" height="45">&nbsp;&nbsp;
+      <a {% if page.title == "Home" %}class="active"{% endif %} href="{{site.baseurl}}index.html">Home</a>
+      <a {% if page.title == "About Us" %}class="active"{% endif %} href="{{site.baseurl}}aboutus.html">About Us</a>
+<!--      <a {% if page.title == "Products & Services" %}class="active"{% endif %} href="{{site.baseurl}}prodserv.html">Products & Services</a>  -->
+      <a {% if page.title == "Contacts" %}class="active"{% endif %} href="{{site.baseurl}}contacts.html">Contacts</a>
+      <a {% if page.title == "News" %}class="active"{% endif %} href="{{site.baseurl}}press.html">News & Events</a>
+      <a {% if page.title == "Blog" %}class="active"{% endif %} href="{{site.baseurl}}blog.html">Blog</a>
+    </nav>
+    <!--
+    <div id="social">
+      <span>Follow us on:</span>
+      <a class="github" href="#">Github</a>
+      <a class="twitter" href="#">Twitter</a>
+    </div>
+    -->
+  </div>
+</div>

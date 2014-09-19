@@ -1,0 +1,37 @@
+---
+layout: base
+---
+
+  <div class="page-title-bar">
+    <div class="inner-content">
+      <h2>
+<!--          {% if page.category == "news" %}
+              News
+          {% elsif page.category == "blog" %}
+              Blog
+          {% elsif page.category == "careers" %}
+              Careers
+          {% endif %} 
+-->
+          {% if page.category == "careers" %}
+              Job Offer
+          {% else %}
+             {{  page.category }}
+          {% endif %}
+      </h2>
+    </div>
+  </div>
+<div class="post">
+  <div id="blog">
+    <div id="blog-single">
+      <article>
+          <h1 class="post-title">{{ page.title }}</h1>
+          <p>Posted on {{ page.date | date: "%B %d, %Y" }} - {{ page.author }}</p>
+        <div class="post-content">
+          {{ content }}
+        </div>
+      </article>
+    
+    </div>
+  </div>
+</div>

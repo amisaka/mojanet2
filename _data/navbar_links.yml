@@ -1,0 +1,26 @@
+- name: "Home"
+  url: "index.html"
+
+##- name: "Product & Services"
+##  url: "prodserv.html"
+
+- name: "News & Events"
+  url: "press.html"
+
+## - name: "Blog"
+##  url: "blog.html"
+
+##- name: "Contacts"
+##  url: "contacts.html"
+
+##- name: "About Us"
+##  url: "aboutus.html"
+
+- name: "Company"
+  child_links: 
+  - name: "Blog"
+    url: "blog.html"
+  - name: "Contacts"
+    url: "contacts.html"
+  - name: "Career"
+    url: "career.html"

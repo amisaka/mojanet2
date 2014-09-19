@@ -1,0 +1,15 @@
+
+# Site settings
+title: Mojatatu Networks 
+email: info@mojatatu.com
+## url: http://192.168.1.93:4000
+
+authors:
+  hadi:
+    name: Jamal H. Salim
+    display_name: Jamal
+    email: hadi@mojatatu.com
+    ## web: http://192.168.1.93:4000
+
+# Building settings
+markdown: kramdown
